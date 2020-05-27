@@ -3,8 +3,8 @@ const MinifyPlugin = require("babel-minify-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
-  mode: process.NODE_ENV || "development",
-  entry: "./src/global.ts",
+  mode: "development",
+  entry: path.resolve(__dirname, "../src/global.ts"),
   module: {
     rules: [
       {
@@ -18,8 +18,8 @@ module.exports = {
     extensions: [".ts"],
   },
   output: {
-    filename: "beautiful-router.min.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: "beautifull-router.min.js",
+    path: path.resolve(__dirname, "../dist"),
   },
   plugins: [new MinifyPlugin()],
   optimization: {

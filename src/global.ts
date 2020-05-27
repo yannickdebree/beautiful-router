@@ -1,3 +1,3 @@
 import { BeautifullRouter } from "./dom/BeautifullRouter";
 
-globalThis.BeautifullRouter = BeautifullRouter;
+(globalThis as any).BeautifullRouter = BeautifullRouter;

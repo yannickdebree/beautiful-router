@@ -1,14 +1,14 @@
 {
-  "name": "beautiful-router",
+  "name": "beautifull-router",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "build:watch": "yarn build -- --watch"
+    "postinstall": "yarn build",
+    "build": "rm -rf dist lib && tsc && webpack --config ./webpack/webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yannickdebree/beautiful-router.git"
+    "url": "git+https://github.com/yannickdebree/beautifull-router.git"
   },
   "husky": {
     "hooks": {
@@ -23,7 +23,7 @@
     "commitlint": "^8.3.5",
     "husky": "^4.2.5",
     "ts-loader": "^6.0.4",
-    "typescript": "^3.5.3",
+    "typescript": "^3.9.3",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"

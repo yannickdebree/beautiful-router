@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "outDir": "./lib",
+        "baseUrl": "./src",
         "noImplicitAny": false,
         "lib": [
             "ES2015",
@@ -8,5 +10,11 @@
         "module": "es6",
         "target": "es5",
         "allowJs": true
-    }
+    },
+    "exclude": [
+        "./node_modules",
+        "./src/global.ts",
+        "./webpack",
+        "./commitlint.config.js"
+    ]
 }
