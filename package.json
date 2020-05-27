@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "postinstall": "yarn build",
-    "build": "rm -rf dist lib && tsc && webpack --config ./webpack/webpack.config.prod.js"
+    "build": "rm -rf dist lib && tsc && webpack --config ./webpack/webpack.config.prod.js",
+    "publish": "yarn build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -12,7 +12,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn build",
       "commitmsg": "commitlint -E GIT_PARAMS"
     }
   },
