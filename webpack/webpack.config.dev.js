@@ -18,7 +18,7 @@ module.exports = {
     extensions: [".ts"],
   },
   output: {
-    filename: "beautifull-router.min.js",
+    filename: "beautiful-router.min.js",
     path: path.resolve(__dirname, "../dist"),
   },
   plugins: [new MinifyPlugin()],

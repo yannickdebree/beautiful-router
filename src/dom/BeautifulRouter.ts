@@ -1,10 +1,10 @@
 import { LinksDetector } from "./LinksDetector";
 
-export class BeautifullRouter {
+export class BeautifulRouter {
   public static querySelector: string;
 
   constructor(querySelector: string) {
-    BeautifullRouter.querySelector = querySelector;
+    BeautifulRouter.querySelector = querySelector;
 
     const rootElement = document.querySelector(querySelector);
 

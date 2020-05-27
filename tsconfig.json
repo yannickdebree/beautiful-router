@@ -2,6 +2,7 @@
     "compilerOptions": {
         "outDir": "./lib",
         "baseUrl": "./src",
+        "declaration": true,
         "noImplicitAny": false,
         "lib": [
             "ES2015",

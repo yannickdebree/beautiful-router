@@ -1,12 +1,16 @@
 {
   "name": "beautiful-router",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "./lib/main.js",
   "typings": "./lib/main.d.ts",
   "scripts": {
-    "build": "rm -rf dist lib && tsc && webpack --config ./webpack/webpack.config.prod.js"
+    "build": "rm -rf dist lib && tsc && webpack --config ./webpack/webpack.config.prod.js",
+    "publish": "yarn build && yarn publish && npm publish"
   },
+  "keywords": [
+    "router"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yannickdebree/beautiful-router.git"

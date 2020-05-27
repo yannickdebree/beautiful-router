@@ -1,1 +1,1 @@
-export { BeautifullRouter } from "./dom/BeautifullRouter";
+export { BeautifulRouter } from "./dom/BeautifulRouter";
