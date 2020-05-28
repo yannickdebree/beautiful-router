@@ -17,7 +17,7 @@ Using Beautiful Router involves than all of your pages have the same structure (
   ...
   <body>
     ...
-    <script src="./dist/beautiful-router.min.js"></script>
+    <script src="https://unpkg.com/beautiful-router@1.0.2/dist/beautiful-router.min.js"></script>
   </body>
 </html>
 ```
@@ -31,7 +31,7 @@ Using Beautiful Router involves than all of your pages have the same structure (
     <div id="root">
       <!-- Your website's content will be automatically injected here. -->
     </div>
-    <script src="./dist/beautiful-router.min.js"></script>
+    <script src="https://unpkg.com/beautiful-router@1.0.2/dist/beautiful-router.min.js"></script>
   </body>
 </html>
 ```
@@ -45,7 +45,7 @@ Using Beautiful Router involves than all of your pages have the same structure (
     <div id="root">
       <!-- Your website's content will be automatically injected here. -->
     </div>
-    <script src="./dist/beautiful-router.min.js"></script>
+    <script src="https://unpkg.com/beautiful-router@1.0.2/dist/beautiful-router.min.js"></script>
     <script>
       new BeautifulRouter("#root");
     </script>
