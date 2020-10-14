@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  blog:
+    image: php:apache
+    working_dir: /var/www/html
+    volumes:
+      - ./samples/blog:/var/www/html
+      - ./dist:/var/www/html/assets/js/vendor/beautiful-router
+    ports:
+      - 8081:80
