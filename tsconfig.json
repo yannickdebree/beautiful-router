@@ -1,16 +1,15 @@
 {
     "compilerOptions": {
         "outDir": "./lib",
-        "baseUrl": "./src",
         "declaration": true,
         "noImplicitAny": false,
+        "moduleResolution": "Node",
         "lib": [
-            "ES2015",
+            "ES2016",
             "DOM"
         ],
         "module": "es6",
-        "target": "es5",
-        "allowJs": true
+        "target": "es5"
     },
     "exclude": [
         "./node_modules",

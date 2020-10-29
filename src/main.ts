@@ -1,1 +1,3 @@
-export { BeautifulRouter } from "./dom/BeautifulRouter";
+import { BeautifulRouter } from "./core";
+
+globalThis.BeautifulRouter = BeautifulRouter;

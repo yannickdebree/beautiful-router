@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-EN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?> - Blog</title>
     <base href="/">
-    <script src="/assets/js/vendor/beautiful-router/beautiful-router.min.js" defer></script>
+    <script src="/assets/js/vendor/beautiful-router/beautiful-router.min.js"></script>
     <script src="/assets/js/app.js" defer></script>
 </head>
 <body>
@@ -24,4 +24,4 @@
             </ul>
         </nav>
     </header>
-    <div id="root">
+    <div id="router">

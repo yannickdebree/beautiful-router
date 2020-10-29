@@ -1,9 +1,7 @@
-export interface Sanitizer {
-  clean(stringToClean: string): string;
-}
+import { Sanitizer } from "./Sanitizer";
 
 export class HTMLSanitizer implements Sanitizer {
-  public clean(htmlToClean: string): string {
+  clean(htmlToClean: string) {
     return htmlToClean.replace(/<script.*\<\/script>/, "");
   }
 }

@@ -1,1 +1,1 @@
-new BeautifulRouter("#root");
+new BeautifulRouter("#router", { cachableRoutes: "*" });
