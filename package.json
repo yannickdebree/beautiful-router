@@ -1,6 +1,6 @@
 {
   "name": "beautiful-router",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "./lib/main.js",
   "typings": "./lib/main.d.ts",
@@ -19,12 +19,10 @@
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
-    "babel-minify-webpack-plugin": "^0.3.1",
     "commitlint": "17.7.1",
     "husky": "8.0.3",
     "ts-loader": "9.4.4",
     "typescript": "5.2.2",
-    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "5.88.2",
     "webpack-cli": "5.1.4"
   }

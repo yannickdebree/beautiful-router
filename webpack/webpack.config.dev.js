@@ -1,6 +1,4 @@
 const path = require("path");
-const MinifyPlugin = require("babel-minify-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -21,13 +19,5 @@ module.exports = {
   output: {
     filename: "beautiful-router.min.js",
     path: path.resolve(__dirname, "../dist"),
-  },
-  plugins: [new MinifyPlugin()],
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        extractComments: true,
-      }),
-    ],
-  },
+  }
 };
