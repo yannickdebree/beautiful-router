@@ -1,3 +1,3 @@
-import { BeautifulRouter } from "./core";
+import BeautifulRouter from "./core/beautiful-router";
 
 globalThis.BeautifulRouter = BeautifulRouter;

@@ -1,8 +1,11 @@
-import { getAvailableLinks, HttpMethod, navigate, sendRequest } from "../utils";
-import { BeautifulRouterCache } from "./BeautifulRouterCache";
-import { BeautifulRouterOptions } from "./BeautifulRouterOptions";
+import { HttpMethod } from "../utils/http-method";
+import { getAvailableLinks } from "../utils/links";
+import { navigate } from "../utils/navigation";
+import { sendRequest } from "../utils/requests";
+import BeautifulRouterCache from "./beautiful-router.cache";
+import BeautifulRouterOptions from "./beautiful-router.options";
 
-export class BeautifulRouter {
+export default class BeautifulRouter {
   private root: HTMLElement;
   private cache = new BeautifulRouterCache();
 
@@ -76,6 +79,4 @@ export class BeautifulRouter {
       this.runLinksDetection();
     }
   }
-
-
 }

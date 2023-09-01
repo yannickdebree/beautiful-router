@@ -1,6 +1,6 @@
-import { Sanitizer } from "./Sanitizer";
+import Sanitizer from "./sanitizer";
 
-export class HTMLSanitizer implements Sanitizer {
+export default class HTMLSanitizer implements Sanitizer {
   clean(htmlToClean: string) {
     return htmlToClean.replace(/<script.*\<\/script>/, "");
   }

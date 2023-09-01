@@ -1,6 +1,6 @@
-import { HTMLSanitizer } from "../sanitizers/HTMLSanitizer";
+import HTMLSanitizer from "../sanitizers/html.sanitizer";
 
-export class BeautifulRouterCache {
+export default class BeautifulRouterCache {
   private cache: { [key: string]: string } = {};
   private htmlSanitizer = new HTMLSanitizer();
 
