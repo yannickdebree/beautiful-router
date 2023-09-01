@@ -1,5 +1,5 @@
 import { HttpMethod } from "../utils/http-method";
-import { getAvailableLinks } from "../utils/links";
+import { getAvailableLinksOnCurrentPage } from "../utils/links";
 import { navigate } from "../utils/navigation";
 import { sendRequest } from "../utils/requests";
 import BeautifulRouterCache from "./beautiful-router.cache";
@@ -13,52 +13,49 @@ export default class BeautifulRouter {
     private readonly rootQuerySelector: string,
     private readonly options?: BeautifulRouterOptions
   ) {
-    this.root = document.querySelector(rootQuerySelector);
+    const root = document.querySelector<HTMLElement>(rootQuerySelector);
 
-    if (!this.root) {
+    if (!root) {
       throw new Error(`"${rootQuerySelector}" element don't exists in DOM.`);
     }
 
-    this.runLinksDetection();
+    this.root = root;
+
+    this.detectLinksOnCurrentPage();
   }
 
-  runLinksDetection() {
-    const availableLinks = getAvailableLinks();
+  private detectLinksOnCurrentPage(): void {
+    const linkElements = getAvailableLinksOnCurrentPage();
 
-    console.log(availableLinks);
-
-    availableLinks.forEach((link) => this.createClickTrigger(link));
+    linkElements.forEach(linkElement => this.createClickTrigger(linkElement));
   }
 
-  async createClickTrigger(link: HTMLElement) {
+  private async createClickTrigger(link: HTMLElement): Promise<void> {
     const hrefValue = link.attributes.getNamedItem("href").value;
 
-    const redirectionToTheCurrentPage =
-      window.location.pathname === `/${hrefValue}`;
+    const cachedValue = this.cache.get(hrefValue);
 
-    if (
-      !redirectionToTheCurrentPage &&
-      !this.cache.get(hrefValue) &&
-      (this.options.cachableRoutes === "*" || !this.options.cachableRoutes.includes(hrefValue))
-    ) {
-      const responseContent = await sendRequest(
-        HttpMethod.GET,
-        link.attributes.getNamedItem("href").textContent
-      );
+    const routeCacheDisabled = this.options.cachableRoutes !== "*" && !this.options.cachableRoutes.includes(hrefValue);
 
-      this.cache.set(hrefValue, responseContent);
+    if (!!cachedValue || routeCacheDisabled) {
+      return Promise.resolve();
     }
 
-    link.addEventListener("click", (event) => {
-      console.log(event);
+    const responseContent = await sendRequest(
+      HttpMethod.GET,
+      link.attributes.getNamedItem("href").textContent
+    );
 
+    this.cache.set(hrefValue, responseContent);
+
+    link.addEventListener("click", (event) => {
       event.preventDefault();
 
       this.clickHandler(hrefValue);
     });
   }
 
-  clickHandler(hrefValue: string) {
+  private clickHandler(hrefValue: string): void {
     const nextContent = this.cache.get(hrefValue);
 
     if (nextContent) {
@@ -76,7 +73,7 @@ export default class BeautifulRouter {
 
       this.root.innerHTML = nextPageRoot.innerHTML;
 
-      this.runLinksDetection();
+      this.detectLinksOnCurrentPage();
     }
   }
 }

@@ -1,7 +1,7 @@
 import Sanitizer from "./sanitizer";
 
 export default class HTMLSanitizer implements Sanitizer {
-  clean(htmlToClean: string) {
+  clean(htmlToClean: string): string {
     return htmlToClean.replace(/<script.*\<\/script>/, "");
   }
 }

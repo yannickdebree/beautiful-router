@@ -2,13 +2,13 @@ version: "3"
 
 services:
   package:
-    image: node:12
+    image: node:16
     command: yarn build:watch
     working_dir: /usr/lib/package
     volumes:
       - $PWD:/usr/lib/package
   blog:
-    image: php:apache
+    image: php:8.2.9-apache
     working_dir: /var/www/html
     volumes:
       - ./samples/blog:/var/www/html

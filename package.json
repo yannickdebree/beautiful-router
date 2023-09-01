@@ -1,6 +1,6 @@
 {
   "name": "beautiful-router",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "main": "./lib/main.js",
   "typings": "./lib/main.d.ts",
@@ -17,15 +17,15 @@
     "url": "git+https://github.com/yannickdebree/beautiful-router.git"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/cli": "17.7.1",
+    "@commitlint/config-conventional": "17.7.0",
     "babel-minify-webpack-plugin": "^0.3.1",
-    "commitlint": "^8.3.5",
-    "husky": "^4.2.5",
-    "ts-loader": "^6.0.4",
-    "typescript": "^3.9.3",
+    "commitlint": "17.7.1",
+    "husky": "8.0.3",
+    "ts-loader": "9.4.4",
+    "typescript": "5.2.2",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7"
+    "webpack": "5.88.2",
+    "webpack-cli": "5.1.4"
   }
 }
